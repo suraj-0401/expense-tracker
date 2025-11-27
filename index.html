@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form>
-
-       Nuber: <input type="number" />
-        Description: <input type="text" />
-        <select> Select
-            <option id="movies">movies</option>
-            <option id="shopping">shopping</option>
-        </select>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker Application</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js"></script>
+  </head>
+  <body class="bg-gray-100 p-8">
+    <div class="text-center mt-4 mb-4">
+      <h1>Expense Tracker Application</h1>
+      <p>Enter the below fields to track your expenses</p>
+    </div>
+    <form
+      onSubmit="showResults(event)"
+      class="flex justify-center align-center gap-4 mt-8"
+    >
+      Amount:
+      <input
+        type="number"
+        id="amount"
+        class="border rounded px-x py-1 border-gray-300"
+        placeholder="Enter amount"
+      />
+      Description:
+      <input
+        type="text"
+        id="description"
+        class="border rounded px-x py-1 border-gray-300"
+        placeholder="Enter description"
+      />
+      <select class="border rounded px-2 py-1 border-gray-300" id="category">
+        <option value="movies">movies</option>
+        <option value="shopping">shopping</option>
+        <option value="trip">trip</option>
+        <option value="food">food</option>
+        <option value="rent">rent</option>
+        <option value="health">health</option>
+      </select>
+      <button
+        type="submit"
+        class="border rounded px-4 py-2 bg-blue-500 text-white hover:bg-blue-600"
+      >
+        Submit
+      </button>
     </form>
-</body>
+    <ul id="add-item" class="mt-24 list-none list-inside"></ul>
+  </body>
 </html>
